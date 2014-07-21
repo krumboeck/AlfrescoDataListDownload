@@ -81,17 +81,15 @@ YAHOO.util.Event.on("${id}-formats-menu", 'change', UpdateDownloadLink);
                    <#list formats as format>
                       <a href="${baseUrl}?format=${format}">${msg("format." + format)}</a> - 
                    </#list>
-                   <a href="${url.context}/page/site/${site}/data-lists?list=${datalist.name?html}">View DataList</a>
+                   <a href="${url.context}/page/site/${site}/data-lists?list=${datalist.name?html}">${msg("dashlet.view_datalist")}</a>
                  </div>
               </div>        
 		     </div>
 	     </#list>
       <#else>
-         <p>There are no Data Lists defined in your site, so nothing can
-           be exported.</p>
+         <p>${msg("dashlet.no_datalists")}</p>
          <#if site??>
-           <p>Please visit the <a href="${url.context}/page/site/${site}/data-lists">Data Lists</a>
-              section of your site to add new Data Lists.</p>
+           <p>${msg("dashlet.link_datalists", "${url.context}/page/site/${site}/data-lists")}</p>
          </#if>
       </#if>
 
